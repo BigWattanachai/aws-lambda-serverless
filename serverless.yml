@@ -1,0 +1,15 @@
+service: starwars-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-1
+
+functions:
+  bnk:
+    handler: handler.bnk
+    events:
+      - http:
+         path: bnk/members
+         method: get
